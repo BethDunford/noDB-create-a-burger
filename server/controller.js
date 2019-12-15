@@ -1,6 +1,7 @@
 let burgers = [];
 let gourmet = [];
 let id = 1;
+let home = [];
 
 function addBurger (req,res){
     let burger = {
@@ -53,7 +54,11 @@ function gourmetBurger(req,res) {
 }
 
 function getGourmetBurgers (req,res){
-    res.status(200).json(burgers);
+    res.status(200).json(gourmet);
+}
+
+function getHome (req, res){
+    res.status(200).json(home);
 }
 
 module.exports = {
@@ -62,5 +67,6 @@ module.exports = {
     editBurger,
     deleteBurger,
     gourmetBurger,
-    getGourmetBurgers
+    getGourmetBurgers,
+    getHome
 };

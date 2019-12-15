@@ -2,7 +2,7 @@ const express = require ("express");
 const app = express ();
 
 //Controller Functions
-const {addBurger, getBurgers, editBurger, deleteBurger, gourmetBurger, getGourmetBurgers} = require("./controller");
+const {addBurger, getBurgers, editBurger, deleteBurger, gourmetBurger, getGourmetBurgers, getHome} = require("./controller");
 
 app.use(express.json());
 
@@ -12,6 +12,7 @@ app.put("/api/getyourburgers/:id", editBurger);
 app.delete("/api/getyourburgers/:id", deleteBurger);
 app.post("/api/getgourmet/", gourmetBurger);
 app.get("/api/getgourmet", getGourmetBurgers);
+app.get("/api/home", getHome);
 
 
 

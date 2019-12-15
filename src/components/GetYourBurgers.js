@@ -33,7 +33,7 @@ class GetYourBurgers extends React.Component {
     }
 
     gourmetBurger (burger){
-        console.log(burger);
+        // console.log(burger);
         axios.post("/api/getgourmet", burger).then(response => {
             console.log(response);
             this.props.updateGourmet(response.data);
