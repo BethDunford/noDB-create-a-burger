@@ -15,7 +15,8 @@ class GetYourBurgers extends React.Component {
             ingredient1: "",
             ingredient2: "",
             ingredient3: "",
-            ingredient4: ""
+            ingredient4: "",
+            currentView: "getyourburgers"
         }
         this.editBurger = this.editBurger.bind(this);
         this.deleteBurger = this.deleteBurger.bind(this);

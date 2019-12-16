@@ -61,6 +61,17 @@ function getHome (req, res){
     res.status(200).json(home);
 }
 
+function deleteGourmetBurger(req, res) {
+    const {id} = req.params;
+    for(let i=0; i< gourmet.length; i++){
+        if(gourmet[i].id == id) {
+            gourmet.splice(i, 1)
+        }
+    }
+    // console.log(burgers)
+    res.status(200).json(gourmet);
+}
+
 module.exports = {
     addBurger,
     getBurgers,
@@ -68,5 +79,6 @@ module.exports = {
     deleteBurger,
     gourmetBurger,
     getGourmetBurgers,
-    getHome
+    getHome,
+    deleteGourmetBurger
 };

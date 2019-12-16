@@ -12,6 +12,7 @@ class GetPunny extends React.Component {
             ingredient2: "",
             ingredient3: "",
             ingredient4: "",
+            currentView: "getpunny"
         }
         this.handleInput = this.handleInput.bind(this);
         this.addClick = this.addClick.bind(this);

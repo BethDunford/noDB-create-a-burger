@@ -11,9 +11,11 @@ class GetGourmet extends React.Component {
             ingredient1: "",
             ingredient2: "",
             ingredient3: "",
-            ingredient4: ""
+            ingredient4: "",
+            currentView: "getgourmet"
         }
         this.deleteBurger = this.deleteBurger.bind(this);
+        this.deleteGourmetBurger = this.deleteGourmetBurger.bind(this);
     };
 
     componentDidMount() {
@@ -26,10 +28,10 @@ class GetGourmet extends React.Component {
             })
     }
 
-    deleteBurger(id) {
-        axios.delete(`/api/getyourburgers/${id}`).then(response => {
+    deleteGourmetBurger(id) {
+        axios.delete(`/api/getgourmet/${id}`).then(response => {
             console.log(response.data)
-            this.props.deleteTheBurger(response.data);
+            this.props.deleteTheGourmetBurger(response.data);
         })
     }
 

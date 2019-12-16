@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url(https://www.dafont.com/bobs-burgers.font) format("truetype");
+}
+
+.home__main{
+    background-color: rgb(242, 223, 83);
+    display: flex;
+    justify-content: center;
+}
+
+.home__belchers{
+    max-width: 1100px;
+    max-height: 1100px;
+}
+
+.footer {
+    position: fixed;
+    left: 0px;
+    bottom:0px;
+    height: 125px;
+    width: 100%;
+    background-color: rgb(242, 223, 83);
+    display: flex;
+    justify-content: space-around;
+}
+
+/* .footer h1 {
+    font-family: 'MyWebFont', Fallback, sans-serif;
+    color: rgb(218, 58, 58);
+} */
+
+.punny {
+    border: none;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+}
+
+.yourburgers {
+    border: none;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+}
+
+.gourmet {
+    border: none;
+    background: inherit;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+}
+
+.burger {
+    max-width: 75px;
+    max-height: 75px;
+}

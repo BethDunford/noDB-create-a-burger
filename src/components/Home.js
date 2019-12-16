@@ -1,5 +1,8 @@
 import React from "react";
 import axios from "axios";
+// import homebelchers from "../assets/home-graphic.png";
+import "../styles/Home.css";
+
 
 class Home extends React.Component {
     constructor() {
@@ -21,12 +24,8 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
-                <button>Get Punny</button>
-                <button>Get Your Burgers</button>
-                <button>Get Inspired</button>
-                <button>Get Gourmet</button>
-            </div>
+            <main className="home__main">
+            </main>
         )
     }
 
