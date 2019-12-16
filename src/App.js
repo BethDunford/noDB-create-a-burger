@@ -31,6 +31,7 @@ class App extends React.Component {
     this.deleteTheBurger = this.deleteTheBurger.bind(this);
     this.updateGourmet = this.updateGourmet.bind(this);
     this.deleteTheGourmetBurger = this.deleteTheGourmetBurger.bind(this);
+    this.showGetBurgers = this.showGetBurgers.bind(this);
   }
 
   componentDidMount() {
@@ -61,47 +62,60 @@ class App extends React.Component {
     this.setState({ gourmet: newGourmetBurgers });
   }
 
+  showGetBurgers() {
+    this.setState({ currentView: "getyourburgers" })
+  }
+
   render() {
     return (
       <div className="App">
-        <main className="home__main">
-          <img
-            className="home__belchers"
-            alt="meat-our-family"
-            src={homebelchers}
-          />
-        </main>
-        <footer className="footer">
-          {/* <h1>Create A Burger-Of-The-Day!</h1> */}
-          <button className="punny" onClick={() => this.setState({ currentView: "getpunny" })} >
-            <img src={punnybutton} alt="Get Punny"/>
-          </button>
-          <img className="burger" src={burgericon} alt="burger" />
-          <button className="yourburgers" onClick={() => this.setState({ currentView: "getyourburgers" })} >
-            <img src={yourbutton} alt="Get Your Burgers"/>
-          </button>
-          <img className="burger" src={burgericon} alt="burger" />
-          <button className="gourmet" onClick={() => this.setState({ currentView: "getgourmet" })} >
-            <img src={gourmetbutton} alt="Get Gourmet"/>
-          </button>
-          {this.state.currentView === "home" ? (
-            <div>
-              <Home />
-            </div>
-          ) : this.state.currentView === "getpunny" ? (
-            <div>
-              <GetPunny updateBurgers={this.updateBurgers} />
-            </div>
-          ) : this.state.currentView === "getyourburgers" ? (
-            <div>
-              <GetYourBurgers burgers={this.state.burgers} updateBurgers={this.updateBurgers} deleteTheBurger={this.deleteTheBurger} updateGourmet={this.updateGourmet} />
-            </div>
-          ) : this.state.currentView === "getgourmet"(
-            <div>
-              <GetGourmet updateGourmet={this.updateGourmet} gourmet={this.state.gourmet} deleteTheGourmetBurger={this.deleteTheGourmetBurger} />
-            </div>
-          )}
-        </footer>
+
+        {this.state.currentView === "home" ? (
+          <div>
+            <main className="home__main">
+              <img
+                className="home__belchers"
+                alt="meat-our-family"
+                src={homebelchers}
+              />
+            </main>
+            <footer className="footer">
+              {/* <h1>Create A Burger-Of-The-Day!</h1> */}
+            
+                <img src={punnybutton} alt="Get Punny" className="punny" onClick={() => this.setState({ currentView: "getpunny" })} />
+              <img className="burger" src={burgericon} alt="burger" />
+              <button className="yourburgers" onClick={() => this.setState({ currentView: "getyourburgers" })} >
+                <img src={yourbutton} alt="Get Your Burgers" />
+              </button>
+              <img className="burger" src={burgericon} alt="burger" />
+              <button className="gourmet" onClick={() => this.setState({ currentView: "getgourmet" })} >
+                <img src={gourmetbutton} alt="Get Gourmet" />
+              </button>
+            </footer>
+          </div>
+        ) : this.state.currentView === "getpunny" ? (
+          <div>
+            <GetPunny updateBurgers={this.updateBurgers} showGetBurgers={this.showGetBurgers} />
+          </div>
+        ) : (this.state.currentView === "getyourburgers") ? (
+          <div>
+            <GetYourBurgers burgers={this.state.burgers} updateBurgers={this.updateBurgers} deleteTheBurger={this.deleteTheBurger} updateGourmet={this.updateGourmet} />
+            <button className="punny" onClick={() => this.setState({ currentView: "getpunny" })} >
+              <img src={punnybutton} alt="Get Punny" />
+            </button>
+            <button className="gourmet" onClick={() => this.setState({ currentView: "getgourmet" })} >
+              <img src={gourmetbutton} alt="Get Gourmet" />
+            </button>
+          </div>
+        )
+              :
+              (this.state.currentView === "getgourmet") ? (
+                <div>
+                  <GetGourmet updateGourmet={this.updateGourmet} gourmet={this.state.gourmet} deleteTheGourmetBurger={this.deleteTheGourmetBurger} />
+                </div>
+              ) : null
+        }
+
       </div>
     );
   }

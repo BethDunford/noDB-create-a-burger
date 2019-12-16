@@ -12,9 +12,10 @@ class GetGourmet extends React.Component {
             ingredient2: "",
             ingredient3: "",
             ingredient4: "",
-            currentView: "getgourmet"
+            currentView: "getgourmet",
+            gourmet: []
         }
-        this.deleteBurger = this.deleteBurger.bind(this);
+        // this.deleteBurger = this.deleteBurger.bind(this);
         this.deleteGourmetBurger = this.deleteGourmetBurger.bind(this);
     };
 
@@ -38,7 +39,7 @@ class GetGourmet extends React.Component {
     render() {
         return (
             <div>
-                {this.props.burgers.map((element, index) => {
+                {this.state.gourmet ? this.state.gourmet.map((element, index) => {
                     return (
                         <div key={index}>
                             <h1>{element.title}</h1>
@@ -54,7 +55,7 @@ class GetGourmet extends React.Component {
                         </div>
                 )
             }
-            )
+            ) : null
         }</div>
         )
     };

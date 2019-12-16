@@ -52,7 +52,8 @@ addClick (){
                 <InputFields placeholder="Ingredient 2" name="ingredient2" onHandleInput={this.handleInput} />
                 <InputFields placeholder="Ingredient 3" name="ingredient3" onHandleInput={this.handleInput} />
                 <InputFields placeholder="Ingredient 4" name="ingredient4" onHandleInput={this.handleInput} />
-                <button onClick={this.addClick} >Place Your Order</button>
+                <button onClick={() => {this.addClick()
+                this.props.showGetBurgers()} } >Place Your Order</button>
             </div>
         )
     }
