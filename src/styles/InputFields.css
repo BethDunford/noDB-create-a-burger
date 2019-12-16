@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url(https://www.dafont.com/bobs-burgers.font) format("truetype");
+}
+
+.input-fields__input-fields {
+    display: flex;
+    flex-direction: column;
+    background-image: "../src/assets/get-punny.png";
+    align-items: center;
+    justify-content: center;
+}

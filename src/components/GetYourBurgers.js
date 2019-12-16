@@ -3,7 +3,9 @@ import axios from "axios";
 import icongourmet from "../assets/icon-gourmet.png";
 import icondelete from "../assets/icon-delete.png";
 import iconedit from "../assets/icon-edit.png";
+import '../styles/reset.css';
 import "../styles/GetYourBurgers.css";
+import header from '../assets/header-yourburgers.png';
 
 
 class GetYourBurgers extends React.Component {
@@ -16,7 +18,9 @@ class GetYourBurgers extends React.Component {
             ingredient2: "",
             ingredient3: "",
             ingredient4: "",
-            currentView: "getyourburgers"
+            currentView: "getyourburgers",
+            burgers: [],
+            gourmet: []
         }
         this.editBurger = this.editBurger.bind(this);
         this.deleteBurger = this.deleteBurger.bind(this);
@@ -72,6 +76,9 @@ class GetYourBurgers extends React.Component {
     render() {
         return (
             <div>
+            <img className="header" src={header} alt="header" />
+            <main className="yourburgersmain" >
+                <div className="displaycards">
                 {this.props.burgers.map((element, index) => {
                     return (
                         <div key={index}>
@@ -116,6 +123,8 @@ class GetYourBurgers extends React.Component {
                         </div>
                     );
                 })}
+                </div>
+                </main>
             </div>
         );
     }

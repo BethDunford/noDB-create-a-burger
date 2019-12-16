@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'MyWebFont';
+    src: url(https://www.dafont.com/bobs-burgers.font) format("truetype");
+}
+
+
+.getpunnymain {
+    background-color: rgb(242, 222, 82);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 60vh;
+}
+
+.header {
+    width: 100vw;
+    height: 20vh;
+}
+
+.input-fields {
+    background-image: url("https://i.imgur.com/fs6Hocc.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.input-fields div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 45%;
+    margin-top: 22vh;
+}

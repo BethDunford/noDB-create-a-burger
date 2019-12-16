@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
 import icondelete from "../assets/icon-delete.png";
-import "../styles/GetYourBurgers.css";
+import '../styles/reset.css';
+import '../styles/GetGourmet.css';
+import header from '../assets/header-gourmet.png';
 
 class GetGourmet extends React.Component {
     constructor() {
@@ -41,6 +43,10 @@ class GetGourmet extends React.Component {
             <div>
                 {this.state.gourmet ? this.state.gourmet.map((element, index) => {
                     return (
+                        <div>
+                            <img className="header" src={header} alt="header" />
+                            <main className="gourmetmain" >
+                                <div className="displaycards" >
                         <div key={index}>
                             <h1>{element.title}</h1>
                             <h2>{element.ingredient1}</h2>
@@ -52,6 +58,9 @@ class GetGourmet extends React.Component {
                                 className="burger__delete"
                                 alt="delete__button"
                                 src={icondelete} />
+                        </div>
+                        </div>
+                        </main>
                         </div>
                 )
             }

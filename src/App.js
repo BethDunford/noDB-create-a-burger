@@ -1,19 +1,21 @@
 import React from 'react';
 import axios from 'axios';
+import '../src/styles/reset.css';
 import '../src/styles/App.css';
-import './reset.css';
 import homebelchers from "../src/assets/home-graphic.png";
 import punnybutton from "../src/assets/punny-button.png";
 import yourbutton from "../src/assets/your-button.png";
 import gourmetbutton from "../src/assets/gourmet-button.png";
-import burgericon from "../src/assets/burger-icon.png";
+// import burgericon from "../src/assets/burger-icon.png";
+
 
 
 //Components
-import Home from './components/Home';
+// import Home from './components/Home';
 import GetPunny from './components/GetPunny';
 import GetYourBurgers from './components/GetYourBurgers';
 import GetGourmet from './components/GetGourmet';
+import Img from "./components/Img";
 // import Views from "./components/Views";
 // import GetInspired from './components/GetInspired';
 
@@ -83,14 +85,10 @@ class App extends React.Component {
               {/* <h1>Create A Burger-Of-The-Day!</h1> */}
             
                 <img src={punnybutton} alt="Get Punny" className="punny" onClick={() => this.setState({ currentView: "getpunny" })} />
-              <img className="burger" src={burgericon} alt="burger" />
-              <button className="yourburgers" onClick={() => this.setState({ currentView: "getyourburgers" })} >
-                <img src={yourbutton} alt="Get Your Burgers" />
-              </button>
-              <img className="burger" src={burgericon} alt="burger" />
-              <button className="gourmet" onClick={() => this.setState({ currentView: "getgourmet" })} >
-                <img src={gourmetbutton} alt="Get Gourmet" />
-              </button>
+              <Img />
+                <img src={yourbutton} alt="Get Your Burgers" className="yourburgers" onClick={() => this.setState({ currentView: "getyourburgers" })} />
+              <Img />
+                <img src={gourmetbutton} alt="Get Gourmet" className="gourmet" onClick={() => this.setState({ currentView: "getgourmet" })} />
             </footer>
           </div>
         ) : this.state.currentView === "getpunny" ? (
@@ -115,6 +113,8 @@ class App extends React.Component {
                 </div>
               ) : null
         }
+
+      
 
       </div>
     );

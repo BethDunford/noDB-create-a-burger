@@ -1,4 +1,6 @@
 import React from "react";
+import "../styles/reset.css";
+import '../styles/InputFields.css';
 
 class InputFields extends React.Component{
     render(){
