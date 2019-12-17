@@ -28,7 +28,7 @@ class GetYourBurgers extends React.Component {
     }
 
     componentDidMount(){
-        axios.get("/api/getyourburgers")
+        axios.get("/api/burgers")
         .then(response => {
             this.setState({burgers: response.data});
         })
@@ -39,7 +39,7 @@ class GetYourBurgers extends React.Component {
 
     gourmetBurger (burger){
         // console.log(burger);
-        axios.post("/api/getgourmet", burger).then(response => {
+        axios.post("/api/gourmet", burger).then(response => {
             console.log(response);
             this.props.updateGourmet(response.data);
         });
@@ -54,7 +54,7 @@ class GetYourBurgers extends React.Component {
             ingredient3,
             ingredient4
         };
-        axios.put(`/api/getyourburgers/${id}`, body).then(response => {
+        axios.put(`/api/burgers/${id}`, body).then(response => {
             this.props.updateBurgers(response.data);
         });
         this.setState({
@@ -63,7 +63,7 @@ class GetYourBurgers extends React.Component {
     }
     
     deleteBurger(id){
-        axios.delete(`/api/getyourburgers/${id}`).then(response => {
+        axios.delete(`/api/burgers/${id}`).then(response => {
             console.log(response.data)
             this.props.deleteTheBurger(response.data);
         })
@@ -76,8 +76,10 @@ class GetYourBurgers extends React.Component {
     render() {
         return (
             <div>
-            <img className="header" src={header} alt="header" />
-            <main className="yourburgersmain" >
+                <header>
+                <img className="header" src={header} alt="header" />
+                </header>           
+                <main className="yourburgersmain" >
                 <div className="displaycards">
                 {this.props.burgers.map((element, index) => {
                     return (

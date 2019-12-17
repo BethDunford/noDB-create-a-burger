@@ -19,9 +19,10 @@
 // 5 pts
 
 //Use a single component more than once
-    //I used .map on line 44 of GetGourmet.js
-    //I used .map on line 82 of GetYourBurgers.js
+    //I used .map on line 44 of GetGourmet.js - didn't count
+    //I used .map on line 82 of GetYourBurgers.js - didn't count
     //I used the entire InputFields.js component in the GetPunny.js component
+    //I used the Img.js component twice in the footer
 // 10 pts
 
 //Parameters/Queries
@@ -37,8 +38,8 @@
 // 5 pts
 
 //REST
-    //I used post, get, put, & delete in index.js
-// 5 pts
+    //I used post, get, put, & delete in index.js - did not count I need to change my endpoint names (no get, be plural)
+// 0 pts
 
 //Promises
     //I have .then and .catch used on promises on lines 41 & 44 in App.js
@@ -46,8 +47,8 @@
 // 5 pts
 
 //Destructuring
-    //I have destructuring on lines 45-50 in GetPunny.js & lines 50-55 in GetYourBurgers.js
-// 4 pts
+    //I have destructuring on lines 45-50 in GetPunny.js & lines 50-55 in GetYourBurgers.js Line 41 in controller.js
+// 6 pts
 
 //Default Styling
     //I removed the default styling and used reset.css
@@ -63,7 +64,7 @@
 // 10 pts
 
 //Semantic Tags
-    //I used <div>, <footer>, & <main>
+    //I used <footer>, <main>, & <header> - div doesn't count
 // 6 pts
 
 //Required 3/4 Stack
@@ -75,14 +76,12 @@
 // 0 pts
 
 //Grand Total
-// 93 pts
+// 95 pts
 
 
 //Missing Points
     //I only have one stateless component
 // -5 pts
-    //I only have two instances of destructuring
-// -2 pts
 
 //Grand Total
-// -7 pts
+// -5 pts

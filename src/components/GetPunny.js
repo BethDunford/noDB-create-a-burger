@@ -49,7 +49,7 @@ class GetPunny extends React.Component {
             ingredient3,
             ingredient4
         };
-        axios.post("/api/getyourburgers", body).then(response => {
+        axios.post("/api/burgers", body).then(response => {
             this.props.updateBurgers(response.data);
         })
         this.setState({
@@ -91,7 +91,9 @@ class GetPunny extends React.Component {
         // console.log(this.state);
         return (
             <div>
+                <header>
                 <img className="header" src={header} alt="header" />
+                </header>
                 <main className="getpunnymain">
                     <div className="input-fields">
                         <div>

@@ -6,14 +6,14 @@ const {addBurger, getBurgers, editBurger, deleteBurger, gourmetBurger, getGourme
 
 app.use(express.json());
 
-app.post("/api/getyourburgers", addBurger);
-app.get("/api/getyourburgers", getBurgers);
-app.put("/api/getyourburgers/:id", editBurger);
-app.delete("/api/getyourburgers/:id", deleteBurger);
-app.post("/api/getgourmet/", gourmetBurger);
-app.get("/api/getgourmet", getGourmetBurgers);
+app.post("/api/burgers", addBurger);
+app.get("/api/burgers", getBurgers);
+app.put("/api/burgers/:id", editBurger);
+app.delete("/api/burgers/:id", deleteBurger);
+app.post("/api/gourmet/", gourmetBurger);
+app.get("/api/gourmet", getGourmetBurgers);
 app.get("/api/home", getHome);
-app.delete("api/getgourmet/:id", deleteGourmetBurger);
+app.delete("api/gourmet/:id", deleteGourmetBurger);
 
 
 

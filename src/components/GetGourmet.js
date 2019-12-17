@@ -22,7 +22,7 @@ class GetGourmet extends React.Component {
     };
 
     componentDidMount() {
-        axios.get("/api/getgourmet")
+        axios.get("/api/gourmet")
             .then(response => {
                 this.setState({ gourmet: response.data });
             })
@@ -32,7 +32,7 @@ class GetGourmet extends React.Component {
     }
 
     deleteGourmetBurger(id) {
-        axios.delete(`/api/getgourmet/${id}`).then(response => {
+        axios.delete(`/api/gourmet/${id}`).then(response => {
             console.log(response.data)
             this.props.deleteTheGourmetBurger(response.data);
         })
@@ -44,7 +44,9 @@ class GetGourmet extends React.Component {
                 {this.state.gourmet ? this.state.gourmet.map((element, index) => {
                     return (
                         <div>
-                            <img className="header" src={header} alt="header" />
+                            <header>
+                                <img className="header" src={header} alt="header" />
+                            </header>
                             <main className="gourmetmain" >
                                 <div className="displaycards" >
                         <div key={index}>
